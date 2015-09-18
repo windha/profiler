@@ -1,6 +1,6 @@
-##统计时间耗时和内存使用类
+## 统计时间耗时和内存使用类
 
-###usage:
+### usage:
 #### composer.json 内容如下
     {
         "require": {
@@ -17,7 +17,7 @@
         ]
     }
 
-###examples:
+### examples:
 
     \Util\Profiler::start("bs");
     sleep(1);
