@@ -7,44 +7,47 @@ namespace Util;
  * @author windha@163.com
  */
 class Profiler{
-
-    public static $makerTimeArr = array();
+    
+    /**
+     * 记录时间点静态数组
+     */
+    public static $markTimeArr = array();
 
     /**
-     * 标记$makerName起始时间点
-     * @param string $makerName
+     * 标记$markName起始时间点
+     * @param string $markName
      * @param float|int $timestamp
      * @return void
      */
-    public static function start($makerName, $timestamp = null)
+    public static function start($markName, $timestamp = null)
     {
-        self::$makerTimeArr[$makerName . '_start'] = $timestamp ? $timestamp : microtime(true);
+        self::$markTimeArr[$markName . '_start'] = $timestamp ? $timestamp : microtime(true);
     }
 
     /**
-     * 标记$makerName结束时间点
-     * @param string $makerName
+     * 标记$markName结束时间点
+     * @param string $markName
      * @param float|int $timestamp
      * @return void
      */
 
-    public static function end($makerName, $timestamp= null)
+    public static function end($markName, $timestamp= null)
     {
-        self::$makerTimeArr[$makerName . '_end'] = $timestamp ? $timestamp : microtime(true);
+        self::$markTimeArr[$markName . '_end'] = $timestamp ? $timestamp : microtime(true);
     }
 
     /**
      * 获取时间耗时
-     * @param string $makerName
+     * @param string $markName
      * @param bool $isreadable
      * @param string $format
      * @return float|string|bool  默认按ms单位返回时间,保存小数点后3位
      */
-    public static function getTime($makerName,$isReadable = false,$format='%.3f%s')
+    public static function getTime($markName,$isReadable = false,$format='%.3f%s')
     {
         $ret = false;
-        if(isset(self::$makerTimeArr[$makerName.'_start']) && isset(self::$makerTimeArr[$makerName.'_end'])){
-            $elapsedTime = self::$makerTimeArr[$makerName.'_end'] - self::$makerTimeArr[$makerName.'_start'];
+        if(isset(self::$markTimeArr[$markName.'_start']) && isset(self::$markTimeArr[$markName.'_end'])){
+            $elapsedTime = self::$markTimeArr[$markName.'_end'] - self::$markTimeArr[$markName.'_start'];
             if($isReadable){
                 $ret = self::readableElapsedTime($elapsedTime,$format);
             }else{
