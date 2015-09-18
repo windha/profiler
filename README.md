@@ -1,7 +1,7 @@
 ##统计时间耗时和内存使用类
 
-###usage
-
+###usage:
+#### composer.json 内容如下
     {
         "require": {
             "windha/profiler":"dev-master"
