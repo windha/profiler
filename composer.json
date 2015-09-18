@@ -1,0 +1,14 @@
+{
+    "name": "windha/profiler",                             
+    "type": "library" ,
+    "description": "profiler time memory usage",
+    "keywords": ["profiler","benchmark"],
+    "homepage": "http://windha.github.io",
+    "license": "MIT",
+    "authors": [
+        {"name": "windha", "email": "windha@163.com"}
+    ],
+    "autoload": {
+        "psr-4": { "Util\\": "src/" }   
+    }
+}
