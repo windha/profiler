@@ -3,7 +3,7 @@
 namespace Util;
 
 /**
- * 统计时间耗时和内存使用类
+ * 统计程序耗时和内存使用
  * @author windha@163.com
  */
 class Profiler{
